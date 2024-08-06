@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fresh-Cart</title>
+    <link rel="stylesheet" href="order.css">
+        <!---fav-icon-links---->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" alt="fav-icon">
+
+
+
+
+</head>
+
+<body>
+
+
+ <!--------navbar---------->
+ <nav>
+
+    <article class="logo-icon">
+        <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+    </article>
+
+    <div class="logo">FRESH-<strong>CART</strong></div>
+
+    <div class="menu-toggle">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+    </div>
+    <ul class="links">
+
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="order.html">Order</a></li>
+        <!--dropdown menu-->
+        <li><a href="#">Products</a>
+            <ul class="dropdown">
+                <li><a href="./Product1.html">Dairy Products </a></li>
+                <li><a href="./Product2.html">Vegetables</a></li>
+                <li><a href="./Product3.html">Cosmetics and Skin care </a></li>
+                <li><a href="./product4.html">Fruits</a></li>
+                <li><a href="./product5.html">Meat and Seafood</a></li>
+                <li><a href="./product6.html">Baking and cooking ingredients</a></li>
+
+
+            </ul>
+        </li>
+        <li><a href="./loyaltyregistration.html">Loyalty Registration</a></li>
+
+    </ul>
+    <a href="./order.html">
+        <article class="fav_cart">
+            <i class="fa fa-cart-plus" aria-hidden="true"></i>
+        </article>
+    </a>
+</nav>
+
+<!-------------end nav bar------------------>
+
+
+    <section>
+        <div class="title">
+            Place your order now with Fresh-Cart
+        </div>
+       </section>
+
+<!-- Order section starts -->
+<section>
+
+    <!-- Fruits Section -->
+    <div class="section">
+        <h2>Fruits</h2>
+        <div class="item">
+            <img src="redapple1.webp" alt="Apple">
+            <span>Apple - Rs.300/kg</span>
+            <input type="number" id="apple" placeholder="Kgs" min="0">
+            <button onclick="addToCart('Apple', 'apple', 300)">Add to Cart</button>
+        </div>
+        <div class="item">
+            <img src="bananan.webp" alt="Banana">
+            <span>Banana - $1/kg</span>
+            <input type="number" id="banana" placeholder="Kgs" min="0">
+            <button onclick="addToCart('Banana', 'banana', 1)">Add to Cart</button>
+        </div>
+        <div class="item">
+            <img src="grpaen.webp" alt="Orange">
+            <span>Grapes - $2/kg</span>
+            <input type="number" id="orange" placeholder="Kgs" min="0">
+            <button onclick="addToCart('Orange', 'orange', 2)">Add to Cart</button>
+        </div>
+        <div class="item">
+            <img src="avacadon.webp" alt="Grapes">
+            <span>Grapes - $4/kg</span>
+            <input type="number" id="grapes" placeholder="Kgs" min="0">
+            <button onclick="addToCart('Grapes', 'grapes', 4)">Add to Cart</button>
+        </div>
+        <div class="item">
+            <img src="mamgo.webp" alt="Mango">
+            <span>Mango - $5/kg</span>
+            <input type="number" id="mango" placeholder="Kgs" min="0">
+            <button onclick="addToCart('Mango', 'mango', 5)">Add to Cart</button>
+        </div>
+        <div class="item">
+            <img src="dfruit.webp" alt="Pineapple">
+            <span>Pineapple - $6/kg</span>
+            <input type="number" id="pineapple" placeholder="Kgs" min="0">
+            <button onclick="addToCart('Pineapple', 'pineapple', 6)">Add to Cart</button>
+        </div>
+        </fieldset>
+    </div>
+    <!-- Vegetables Section -->
+    <div class="section">
+        <h2>Vegetables</h2>
+        <div class="item">
+            <img src="tomatoesss.jpeg" alt="Tomato">
+            <span>Tomato - $2/kg</span>
+            <input type="number" id="tomato" placeholder="Kgs" min="0">
+            <button onclick="addToCart('Tomato', 'tomato', 2)">Add to Cart</button>
+        </div>
+        <div class="item">
+            <img src="potatoes.jpeg" alt="Potato">
+            <span>Potato - $1/kg</span>
+            <input type="number" id="potato" placeholder="Kgs" min="0">
+            <button onclick="addToCart('Potato', 'potato', 1)">Add to Cart</button>
+        </div>
+        <div class="item">
+            <img src="carrot.jpeg" alt="Carrot">
+            <span>Carrot - $3/kg</span>
+            <input type="number" id="carrot" placeholder="Kgs" min="0">
+            <button onclick="addToCart('Carrot', 'carrot', 3)">Add to Cart</button>
+        </div>
+        <div class="item">
+            <img src="brinjal.webp" alt="Cabbage">
+            <span>Cabbage - $4/kg</span>
+            <input type="number" id="cabbage" placeholder="Kgs" min="0">
+            <button onclick="addToCart('Cabbage', 'cabbage', 4)">Add to Cart</button>
+        </div>
+        <div class="item">
+            <img src="beans.jpeg" alt="Onion">
+            <span>Onion - $5/kg</span>
+            <input type="number" id="onion" placeholder="Kgs" min="0">
+            <button onclick="addToCart('Onion', 'onion', 5)">Add to Cart</button>
+        </div>
+        <div class="item">
+            <img src="pumpkin.jpeg" alt="Pumpkin">
+            <span>Pumpkin - $6/kg</span>
+            <input type="number" id="pumpkin" placeholder="Kgs" min="0">
+            <button onclick="addToCart('Pumpkin', 'pumpkin', 6)">Add to Cart</button>
+        </div>
+    </div>
+
+    <!-- Dairy Produce Section -->
+    <div class="section">
+        <h2>Dairy Produce</h2>
+        <div class="item">
+            <img src="fresh milk.jpeg" alt="Milk">
+            <span>Milk - $1/litre</span>
+            <input type="number" id="milk" placeholder="Qty" min="0">
+            <button onclick="addToCart('Milk', 'milk', 1)">Add to Cart</button>
+        </div>
+        <div class="item">
+            <img src="yoghurt.png" alt="Cheese">
+            <span>Cheese - $2/200g</span>
+            <input type="number" id="cheese" placeholder="Qty" min="0">
+            <button onclick="addToCart('Cheese', 'cheese', 2)">Add to Cart</button>
+        </div>
+        <div class="item">
+            <img src="butter.avif" alt="Butter">
+            <span>Butter - $3/200g</span>
+            <input type="number" id="butter" placeholder="Qty" min="0">
+            <button onclick="addToCart('Butter', 'butter', 3)">Add to Cart</button>
+        </div>
+        <div class="item">
+            <img src="curd.jpeg" alt="Yogurt">
+            <span>Yogurt - $4/200g</span>
+            <input type="number" id="yogurt" placeholder="Qty" min="0">
+            <button onclick="addToCart('Yogurt', 'yogurt', 4)">Add to Cart</button>
+        </div>
+        <div class="item">
+            <img src="milk-powder.jpeg" alt="Cream">
+            <span>Cream - $5/200g</span>
+            <input type="number" id="cream" placeholder="Qty" min="0">
+            <button onclick="addToCart('Cream', 'cream', 5)">Add to Cart</button>
+        </div>
+        <div class="item">
+            <img src="milkmaid.jpg" alt="Eggs">
+            <span>Eggs - $6/dozen</span>
+            <input type="number" id="eggs" placeholder="Qty" min="0">
+            <button onclick="addToCart('Eggs', 'eggs', 6)">Add to Cart</button>
+        </div>
+    </div>
+
+    <!-- Meat and Seafood Section -->
+    <div class="section">
+        <h2>Meat and Seafood</h2>
+        <div class="item">
+            <img src="tilapia.jpg" alt="Chicken">
+            <span>Chicken - $5/kg</span>
+            <input type="number" id="chicken" placeholder="Kgs" min="0">
+            <button onclick="addToCart('Chicken', 'chicken', 5)">Add to Cart</button>
+        </div>
+        <div class="item">
+            <img src="prawnss.webp" alt="Beef">
+            <span>Beef - $6/kg</span>
+            <input type="number" id="beef" placeholder="Kgs" min="0">
+            <button onclick="addToCart('Beef', 'beef', 6)">Add to Cart</button>
+        </div>
+        <div class="item">
+            <img src="chicken.jpg" alt="Fish">
+            <span>Fish - $4/kg</span>
+            <input type="number" id="fish" placeholder="Kgs" min="0">
+            <button onclick="addToCart('Fish', 'fish', 4)">Add to Cart</button>
+        </div>
+        <div class="item">
+            <img src="cuttlefish.jpeg" alt="Shrimp">
+            <span>Shrimp - $3/kg</span>
+            <input type="number" id="shrimp" placeholder="Kgs" min="0">
+            <button onclick="addToCart('Shrimp', 'shrimp', 3)">Add to Cart</button>
+        </div>
+        <div class="item">
+            <img src="tuna.webp" alt="Shrimp">
+            <span>Shrimp - $3/kg</span>
+            <input type="number" id="shrimp" placeholder="Kgs" min="0">
+            <button onclick="addToCart('Shrimp', 'shrimp', 3)">Add to Cart</button>
+        </div>
+        <div class="item">
+            <img src="mutton.jpg" alt="Shrimp">
+            <span>Shrimp - $3/kg</span>
+            <input type="number" id="shrimp" placeholder="Kgs" min="0">
+            <button onclick="addToCart('Shrimp', 'shrimp', 3)">Add to Cart</button>
+        </div>
+    </div>
+
+    <!-- Baking and Cooking Ingredients Section -->
+    <div class="section">
+        <h2>Baking and Cooking Ingredients</h2>
+        <div class="item">
+            <img src="flourr.jpg" alt="Flour">
+            <span>Flour - $1/kg</span>
+            <input type="number" id="flour" placeholder="Qty" min="0">
+            <button onclick="addToCart('Flour', 'flour', 1)">Add to Cart</button>
+        </div>
+        <div class="item">
+            <img src="sugarr.jpg" alt="Sugar">
+            <span>Sugar - $2/kg</span>
+            <input type="number" id="sugar" placeholder="Qty" min="0">
+            <button onclick="addToCart('Sugar', 'sugar', 2)">Add to Cart</button>
+        </div>
+        <div class="item">
+            <img src="oil.jpg" alt="Salt">
+            <span>Salt - $3/kg</span>
+            <input type="number" id="salt" placeholder="Qty" min="0">
+            <button onclick="addToCart('Salt', 'salt', 3)">Add to Cart</button>
+        </div>
+        <div class="item">
+            <img src="baking powder.jpg" alt="Baking Powder">
+            <span>Baking Powder - $4/200g</span>
+            <input type="number" id="baking_powder" placeholder="Qty" min="0">
+            <button onclick="addToCart('Baking Powder', 'baking_powder', 4)">Add to Cart</button>
+        </div>
+        <div class="item">
+            <img src="salt.jpg" alt="Yeast">
+            <span>Yeast - $5/200g</span>
+            <input type="number" id="yeast" placeholder="Qty" min="0">
+            <button onclick="addToCart('Yeast', 'yeast', 5)">Add to Cart</button>
+        </div>
+        <div class="item">
+            <img src="rice.webp" alt="Olive Oil">
+            <span>Olive Oil - $6/litre</span>
+            <input type="number" id="olive_oil" placeholder="Qty" min="0">
+            <button onclick="addToCart('Olive Oil', 'olive_oil', 6)">Add to Cart</button>
+        </div>
+    </div>
+</section>
+
+
+<!-- Cart Table -->
+
+<section id="cart">
+    <table id="cart-table">
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>Quantity</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="2">Total</td>
+                <td id="total-price">$0</td>
+            </tr>
+        </tfoot>
+    </table>
+   
+</section>
+
+
+
+<!-- Payment button starts -->
+<section class="paymentbutton">
+    <button class="btn"  onclick="saveToFavorites()">Add to Favourites</button>
+    <button class="btn"  onclick="applyFavorites()">Apply Favourites</button>
+   <button class="btn" > <a  class="link3" href="./payment.html">Proceed to payment</a></button>
+    
+</section>
+<!-- Payment button ends -->
+
+<!----------------footer--------------->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section contact-us">
+                <h4>Contact Us</h4>
+                <p>Email: freshcart@gmail.com</p>
+                <p>Phone: 081-3456126 (main-branch)</p>
+                <p>Address: No.321, Peradeniya Rd, Getambe.</p>
+            </div>
+            <div class="footer-section quick-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./Product1.html">Shop</a></li>
+                    <li><a href="./about.html">About Us</a></li>
+                    <li><a href="./about.html">Contact</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section find-us">
+                <h4>Find Us On</h4>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+        </div>
+    </footer>
+
+    <!-----------------------footer ends------------------------------->
+
+
+<!-- Link to external JavaScript file -->
+<script src="order.js"></script>
+<script src="script.js"></script>
+
+
+</body>
+
+
+
+</html>
