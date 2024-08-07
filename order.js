@@ -23,6 +23,8 @@ function addToCart(itemName, itemId, itemPrice) {
     }
 }
 
+
+
 // Function to update cart table and total price
 function updateCartTable() {
     const cartTableBody = document.querySelector("#cart-table tbody");
