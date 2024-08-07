@@ -27,8 +27,3 @@ function generateOrderSummary() {
 
 // Call the function when the page loads
 window.onload = generateOrderSummary;
-
-// Clear the cart when the payment page is loaded
-window.addEventListener("beforeunload", () => {
-    localStorage.removeItem('cart');
-});

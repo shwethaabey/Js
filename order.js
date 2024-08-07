@@ -1,4 +1,4 @@
-// Initialize cart and favorites arrays from localStorage or as empty arrays
+// Initialize cart and favorites arrays
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
 
@@ -19,7 +19,6 @@ function addToCart(itemName, itemId, itemPrice) {
         updateCartTable();
         quantityInput.value = ''; 
         localStorage.setItem('cart', JSON.stringify(cart)); // Save cart to localStorage
-        sessionStorage.setItem('cartExists', 'true'); // Indicate that cart exists
     } else {
         alert("Please enter a valid quantity.");
     }
@@ -74,7 +73,6 @@ function applyFavorites() {
 // Function to proceed to payment page
 function proceedToPayment() {
     localStorage.setItem('cart', JSON.stringify(cart)); // Store the cart in localStorage
-    sessionStorage.setItem('navigation', 'proceedToPayment');
     window.location.href = './payment.html'; // Redirect to the payment page
 }
 
@@ -104,7 +102,7 @@ function validateAndProceedToPayment(event) {
         const deliveryDate = new Date(currentDate.getTime() + 2 * 24 * 60 * 60 * 1000);
         const formattedDeliveryDate = deliveryDate.toLocaleDateString();
         alert(`Thank you for the purchase! Your order will be delivered on ${formattedDeliveryDate}`); // Optional: For testing
-        proceedToPayment(); // Proceed to payment after validation
+        window.location.href = './payment.html';
     }
 }
 
@@ -112,14 +110,4 @@ function validateAndProceedToPayment(event) {
 document.querySelector("#checkoutForm").addEventListener("submit", validateAndProceedToPayment);
 
 // Load cart data from localStorage when the page loads
-document.addEventListener("DOMContentLoaded", () => {
-    if (sessionStorage.getItem('cartExists') !== 'true') {
-        localStorage.removeItem('cart'); // Clear localStorage if not coming from payment page
-        cart = [];
-    } else {
-        cart = JSON.parse(localStorage.getItem('cart')) || [];
-    }
-    updateCartTable();
-    sessionStorage.removeItem('navigation'); // Clear the session flag
-    sessionStorage.removeItem('cartExists'); // Clear the cart exists flag
-});
+document.addEventListener("DOMContentLoaded", updateCartTable);
