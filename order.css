@@ -2,8 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik+Scribble&display=swap');
 
 :root {
-  --fa-animation-delay: 0.5s; /* Set a delay of 0.5 seconds */
+  --fa-animation-delay: 0s;
+  --fa-rotate-angle: 0deg;
 }
+
 
 * {
   margin: 0;
