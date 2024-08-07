@@ -46,23 +46,29 @@ function updateCartTable() {
 
 // Function to save the current cart as favorites
 function saveToFavorites() {
-    favorites = [...cart]; // Overwrite existing favorites
-    localStorage.setItem('favorites', JSON.stringify(favorites));
-    alert("Items saved to favorites!");
+    if (cart.length === 0) {
+        alert("Sorry, Your cart is empty!.");
+    } else {
+        favorites = [...cart]; // Overwrite existing favorites
+        localStorage.setItem('favorites', JSON.stringify(favorites));
+        alert("Items saved to favorites!");
+    }
 }
+
 
 // Function to apply favorites to the cart and table
 function applyFavorites() {
     const storedFavorites = JSON.parse(localStorage.getItem('favorites'));
-    
-    if (storedFavorites) {
+
+    if (storedFavorites && storedFavorites.length > 0) {
         cart = storedFavorites;
         updateCartTable();
         alert("Your favourites have been added to the cart!");
     } else {
-        alert("Sorry, no favourites found!");
+        alert("Sorry, your favourites list is empty!");
     }
 }
+
 // Function to proceed to payment page
 function proceedToPayment() {
     localStorage.setItem('cart', JSON.stringify(cart)); // Store the cart in localStorage
