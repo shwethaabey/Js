@@ -178,21 +178,25 @@ nav .fav_cart {
 
 
 #cart-table {
-  width: 100%;
+  width: 59%;
   border-collapse: collapse;
   margin-top: 100px;
+  margin-left: 290px;
+  background-color: beige;
+  
 
 }
 
 #cart-table th,
 #cart-table td {
-  border: 1px solid #ddd;
+  border: 1px solid #080707;
   padding: 10px;
   text-align: center;
+  background-color: #ffffff;
 }
 
 #cart-table th {
-  background-color: #f2f2f2;
+  background-color: #e4e0d0;
 }
 
 
@@ -204,8 +208,8 @@ nav .fav_cart {
   align-items: center;
   padding:25px;
   min-height: 100vh;
-  background-color: beige;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border: #000;
 }
 
 .container form{
@@ -213,6 +217,8 @@ nav .fav_cart {
   width:800px;
   background: #fff;
   box-shadow: 0 5px 10px rgba(0,0,0,.1);
+  border-radius: 12px;
+  background-color: #e4e0d0;
 }
 
 .container form .row{
@@ -262,27 +268,40 @@ nav .fav_cart {
   margin-top: 5px;
 }
 
-.container form .row .col .inputBox img{
-  height: 34px;
-  margin-top: 5px;
-  filter: drop-shadow(0 0 1px #000);
-}
+
 
 .container form .submit-btn{
   width: 100%;
   padding:12px;
-  font-size: 17px;
+  font-size: 20px;
   background: #141515;
   color:#fff;
   margin-top: 5px;
   cursor: pointer;
+  font-family: 'Times New Roman', Times, serif;
+
 }
 
 .container form .submit-btn:hover{
   background: #191817;
+  
 }
 
+@media (max-width: 768px) {
+  .container form .row {
+    flex-direction: column;
+    gap: 0;
+  }
 
+  #cart-table th,
+  #cart-table td {
+    margin-right: 1000px;
+  }
+
+  .container form .row .col {
+    flex: 1 1 100%;
+  }
+}
 /*--------------form ends-------------*/
 
 
