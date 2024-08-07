@@ -19,6 +19,7 @@ function addToCart(itemName, itemId, itemPrice) {
         updateCartTable();
         quantityInput.value = ''; 
         localStorage.setItem('cart', JSON.stringify(cart)); // Save cart to localStorage
+        sessionStorage.setItem('cartExists', 'true'); // Indicate that cart exists
     } else {
         alert("Please enter a valid quantity.");
     }
@@ -73,6 +74,7 @@ function applyFavorites() {
 // Function to proceed to payment page
 function proceedToPayment() {
     localStorage.setItem('cart', JSON.stringify(cart)); // Store the cart in localStorage
+    sessionStorage.setItem('navigation', 'proceedToPayment');
     window.location.href = './payment.html'; // Redirect to the payment page
 }
 
@@ -111,6 +113,13 @@ document.querySelector("#checkoutForm").addEventListener("submit", validateAndPr
 
 // Load cart data from localStorage when the page loads
 document.addEventListener("DOMContentLoaded", () => {
-    cart = JSON.parse(localStorage.getItem('cart')) || [];
+    if (sessionStorage.getItem('cartExists') !== 'true') {
+        localStorage.removeItem('cart'); // Clear localStorage if not coming from payment page
+        cart = [];
+    } else {
+        cart = JSON.parse(localStorage.getItem('cart')) || [];
+    }
     updateCartTable();
+    sessionStorage.removeItem('navigation'); // Clear the session flag
+    sessionStorage.removeItem('cartExists'); // Clear the cart exists flag
 });
