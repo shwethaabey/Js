@@ -50,9 +50,9 @@
             <li><a href="./loyaltyregistration.html">Loyalty Registration</a></li>
     
         </ul>
-        <a href="./order.html">
+        <a href="./order.html" aria-label="direct to order page">
             <article class="fav_cart">
-                <i class="fa fa-cart-plus" aria-hidden="true"></i>
+                <i class="fa fa-cart-plus" alt="cart-icon"></i>
             </article>
         </a>
     </nav>
@@ -61,90 +61,76 @@
 
 <body>
 
+
+
 <section>
     <div class="container">
-  
-      <form action="">
-  
-          <div class="row">
-  
-              <div class="col">
-  
-                  <h3 class="title">billing address</h3>
-  
-                  <div class="inputBox">
-                      <span>full name :</span>
-                      <input type="text" placeholder="john deo">
-                  </div>
-                  <div class="inputBox">
-                      <span>email :</span>
-                      <input type="email" placeholder="123@example.com">
-                  </div>
-                  <div class="inputBox">
-                      <span>address :</span>
-                      <input type="text" placeholder="room - street - locality">
-                  </div>
-                  <div class="inputBox">
-                      <span>city :</span>
-                      <input type="text" placeholder="Colombo">
-                  </div>
-  
-                  <div class="flex">
-                      <div class="inputBox">
-                          <span>state :</span>
-                          <input type="text" placeholder="Sri-Lanka">
-                      </div>
-                      <div class="inputBox">
-                          <span>zip code :</span>
-                          <input type="text" placeholder="123 456">
-                      </div>
-                  </div>
-  
-              </div>
-  
-              <div class="col">
-  
-                  <h3 class="title">payment</h3>
-  
-                  <div class="inputBox">
-                      <span>cards accepted :</span>
-                      <img src="card_img.png" alt="">
-                  </div>
-                  <div class="inputBox">
-                      <span>name on card :</span>
-                      <input type="text" placeholder="mr. john deo">
-                  </div>
-                  <div class="inputBox">
-                      <span>credit card number :</span>
-                      <input type="number" placeholder="1111-2222-3333-4444">
-                  </div>
-                  <div class="inputBox">
-                      <span>exp month :</span>
-                      <input type="text" placeholder="january">
-                  </div>
-  
-                  <div class="flex">
-                      <div class="inputBox">
-                          <span>exp year :</span>
-                          <input type="number" placeholder="2022">
-                      </div>
-                      <div class="inputBox">
-                          <span>CVV :</span>
-                          <input type="text" placeholder="1234">
-                      </div>
-                  </div>
-  
-              </div>
-      
-          </div>
-  
-          <input type="submit" value="proceed to checkout" class="submit-btn">
-  
-      </form>
-  
-  </div>    
-  </section>
+        <form id="checkoutForm" action="">
+            <div class="row">
+                <div class="col">
+                    <h3 class="title">Personal Information</h3>
+                    <div class="inputBox">
+                        <span>Full Name :</span>
+                        <input type="text" id="fullName" placeholder="" aria-label="fullName" required>
+                    </div>
+                    <div class="inputBox">
+                        <span>Email :</span>
+                        <input type="email" id="email" placeholder="" aria-label="Email" required>
+                    </div>
+                    <div class="inputBox">
+                        <span>Telephone number :</span>
+                        <input type="number" id="telephone" placeholder="" min="0"   aria-label="Telephone" required>
+                    </div>
+                    <h3 class="title">Delivery information</h3>
+                    <div class="inputBox">
+                        <span>Delivery Address :</span>
+                        <input type="text" id="Daddress" placeholder="" aria-label="Daddress" required>
+                    </div>
 
+                    <div class="flex">
+                        <div class="inputBox">
+                            <span>City :</span>
+                            <input type="text" id="state" placeholder="" aria-label="state" required>
+                        </div>
+                        <div class="inputBox">
+                            <span>Zip code :</span>
+                            <input type="text" id="zipCode" placeholder="" aria-label="Zcode" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <h3 class="title">Payment details</h3>
+                    <div class="inputBox">
+                    <p>
+                        <label for="cards">Cards Accepted: </label>
+                        <select id="cards" name="cards" required>
+                            <option value="visa">Visa</option>
+                            <option value="master">Master Card</option>
+                            <option value="american">American Express</option>
+                              
+                        </select>
+                    </p>
+                    </div>
+                    <div class="inputBox">
+                        <span>Promo codes:</span>
+                        <input type="text" id="pcode" placeholder=" " aria-label="pcode" >
+                    </div>
+
+                    <h3 class="title">ADDITIONAL INFORMATION</h3>
+
+                    <div class="inputBox">
+                        <span>Special instructions</span>
+                        <input type="text" id="instructions" placeholder="" aria-label="instructions" required>
+                    </div>
+
+                    
+                    
+                </div>
+            </div>
+            <input type="submit" value="Place order" class="submit-btn" required>
+        </form>
+    </div>    
+</section>
 
 
 <!----------------footer--------------------------------------->
@@ -169,15 +155,23 @@
         <div class="footer-section find-us">
             <h4>Find Us On</h4>
             <div class="social-icons">
-                <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://facebook.com" aria-label="Facebook" class="social-icon">
+                <i class="fab fa-facebook-f" alt="Facebook"></i></a>
+                <a href="https://x.com"  aria-label="Twitter" class="social-icon">
+                <i class="fab fa-twitter" alt="Twitter"></i></a>
+                <a href="https://www.instagram.com"  aria-label="instagram" class="social-icon">
+                <i class="fab fa-instagram" alt="instagram"></i></a>
+                <a href="./https://www.linkedin.com" aria-label="linkedin"  class="social-icon">
+                <i class="fab fa-linkedin-in" alt="linkedin"></i></a>
+            </div>
             </div>
     </div>
 </footer>
 
 <!-----------------------footer ends------------------------------->
+
+<script src="order.js"></script>
+<script src="payment.js"></script>
 
 </body>
 </html>

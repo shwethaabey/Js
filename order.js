@@ -1,6 +1,3 @@
-//order page.js
-
-
 // Cart and Favorites Arrays
 let cart = [];
 let favorites = [];
@@ -37,14 +34,14 @@ function updateCartTable() {
         const row = document.createElement("tr");
         row.innerHTML = `
             <td>${item.name}</td>
-            <td>${item.quantity}</td>
-            <td>$${(item.price * item.quantity).toFixed(2)}</td>
+            <td>${item.quantity} </td>
+            <td>Rs. ${(item.price * item.quantity).toFixed(2)}</td>
         `;
         cartTableBody.appendChild(row);
         totalPrice += item.price * item.quantity;
     });
 
-    document.getElementById("total-price").innerText = `${totalPrice.toFixed(2)}`;
+    document.getElementById("total-price").innerText = `Rs. ${totalPrice.toFixed(2)}`;
 }
 
 // Function to save the current cart as favorites
@@ -61,22 +58,47 @@ function applyFavorites() {
     if (storedFavorites) {
         cart = storedFavorites;
         updateCartTable();
-        alert("Your favourites at fresh-cart added to the cart!");
+        alert("Your favourites have been added to the cart!");
     } else {
         alert("Sorry, no favourites found!");
     }
 }
-
-// Function to proceed to payment
+// Function to proceed to payment page
 function proceedToPayment() {
-    if (cart.length === 0) {
-        alert("Your cart is empty. Add items to the cart before proceeding to the payment.");
-        return;
-    }
-    window.location.href = './payment.html';
+    localStorage.setItem('cart', JSON.stringify(cart)); // Store the cart in localStorage
+    window.location.href = './payment.html'; // Redirect to the payment page
 }
 
-// Adding event listener to the payment button
-document.querySelector(".btn").addEventListener("click", proceedToPayment);
+// Call proceedToPayment() when the user proceeds to payment
 
-k
+function validateAndProceedToPayment(event) {
+    event.preventDefault(); // Prevent the form from submitting
+
+    const formFields = document.querySelectorAll("#checkoutForm input[type='text'], #checkoutForm input[type='email'], #checkoutForm input[type='number']");
+    let allFieldsFilled = true;
+
+    // Check if all fields are filled
+    formFields.forEach(field => {
+        if (field.value.trim() === '') {
+            allFieldsFilled = false;
+            field.style.border = "2px solid black"; // Highlight the empty fields
+        } else {
+            field.style.border = ""; // Reset the border if filled
+        }
+    });
+
+    // Show alert if fields are missing or cart is empty
+    if (!allFieldsFilled) {
+        alert("Please fill in all the fields before proceeding to checkout.");
+    } else {
+        // Calculate delivery date (2 days after current date)
+        const currentDate = new Date();
+        const deliveryDate = new Date(currentDate.getTime() + 2 * 24 * 60 * 60 * 1000);
+        const formattedDeliveryDate = deliveryDate.toLocaleDateString();
+        alert(`Thank you for the purchase! Your order will be deliverd on ${formattedDeliveryDate}`); // Optional: For testing
+        window.location.href = './payment.html';
+    }
+}
+
+// Adding event listener to the form's submit button
+document.querySelector("#checkoutForm").addEventListener("submit", validateAndProceedToPayment);

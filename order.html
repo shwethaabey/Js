@@ -6,9 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fresh-Cart</title>
     <link rel="stylesheet" href="order.css">
-        <!---fav-icon-links---->
+        <!--fav-icon-links-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" alt="fav-icon">
 
 
 
@@ -18,17 +17,18 @@
 <body>
 
 
- <!--------navbar---------->
+ <!--navbar-->
  <nav>
-
+        <div>
     <article class="logo-icon">
         <i class="fa fa-shopping-basket" aria-hidden="true"></i>
     </article>
+    </div>
 
     <div class="logo">FRESH-<strong>CART</strong></div>
 
     <div class="menu-toggle">
-        <i class="fa fa-bars" aria-hidden="true"></i>
+        <i class="fa fa-bars"></i>
     </div>
     <ul class="links">
 
@@ -51,21 +51,21 @@
         <li><a href="./loyaltyregistration.html">Loyalty Registration</a></li>
 
     </ul>
-    <a href="./order.html">
+    <a href="./order.html" aria-label="direct to order page">
         <article class="fav_cart">
-            <i class="fa fa-cart-plus" aria-hidden="true"></i>
+            <i class="fa fa-cart-plus" alt="cart-icon"></i>
         </article>
     </a>
 </nav>
 
-<!-------------end nav bar------------------>
+<!--end nav bar-->
 
 
-    <section>
+    <section class="main.title">
         <div class="title">
-            Place your order now with Fresh-Cart
+        <h1>Place your order now with Fresh-Cart</h1>
         </div>
-       </section>
+    </section>
 
 <!-- Order section starts -->
 <section>
@@ -74,81 +74,80 @@
     <div class="section">
         <h2>Fruits</h2>
         <div class="item">
-            <img src="redapple1.webp" alt="Apple">
-            <span>Apple - Rs.300/kg</span>
-            <input type="number" id="apple" placeholder="Kgs" min="0">
+            <img src="redapple1.webp" alt="Apples">
+            <span>Apple- Rs.300/kg</span>
+            <input type="number" id="apple" placeholder="Kgs" min="0" aria-label="Apple" >
             <button onclick="addToCart('Apple', 'apple', 300)">Add to Cart</button>
         </div>
         <div class="item">
-            <img src="bananan.webp" alt="Banana">
-            <span>Banana - $1/kg</span>
-            <input type="number" id="banana" placeholder="Kgs" min="0">
-            <button onclick="addToCart('Banana', 'banana', 1)">Add to Cart</button>
+            <img src="bananan.webp" alt="Bananas">
+            <span>Banana - Rs.400/kg</span>
+            <input type="number" id="banana" placeholder="Kgs" min="0" aria-label="apple">
+            <button onclick="addToCart('Banana', 'banana', 400)">Add to Cart</button>
         </div>
         <div class="item">
-            <img src="grpaen.webp" alt="Orange">
-            <span>Grapes - $2/kg</span>
-            <input type="number" id="orange" placeholder="Kgs" min="0">
-            <button onclick="addToCart('Orange', 'orange', 2)">Add to Cart</button>
+            <img src="grpaen.webp" alt="Grapes1">
+            <span>Grapes - Rs.250/kg</span>
+            <input type="number" id="grape" placeholder="Kgs" min="0" aria-label="apple">
+            <button onclick="addToCart('Grape', 'grape', 250)">Add to Cart</button>
         </div>
         <div class="item">
-            <img src="avacadon.webp" alt="Grapes">
-            <span>Grapes - $4/kg</span>
-            <input type="number" id="grapes" placeholder="Kgs" min="0">
-            <button onclick="addToCart('Grapes', 'grapes', 4)">Add to Cart</button>
+            <img src="avacadon.webp" alt="Avacados">
+            <span>Avacado - Rs.200/kg</span>
+            <input type="number" id="avacado" placeholder="Kgs" min="0" aria-label="apple">
+            <button onclick="addToCart('Avacado', 'avacado', 200)">Add to Cart</button>
         </div>
         <div class="item">
-            <img src="mamgo.webp" alt="Mango">
-            <span>Mango - $5/kg</span>
-            <input type="number" id="mango" placeholder="Kgs" min="0">
-            <button onclick="addToCart('Mango', 'mango', 5)">Add to Cart</button>
+            <img src="mamgo.webp" alt="Mangos">
+            <span>Mango - Rs.350/kg</span>
+            <input type="number" id="mango" placeholder="Kgs" min="0" aria-label="apple">
+            <button onclick="addToCart('Mango', 'mango', 350)">Add to Cart</button>
         </div>
         <div class="item">
-            <img src="dfruit.webp" alt="Pineapple">
-            <span>Pineapple - $6/kg</span>
-            <input type="number" id="pineapple" placeholder="Kgs" min="0">
-            <button onclick="addToCart('Pineapple', 'pineapple', 6)">Add to Cart</button>
+            <img src="dfruit.webp" alt="Dfruit">
+            <span>Dragon Fruit - Rs.500/kg</span>
+            <input type="number" id="dfruit" placeholder="Kgs" min="0" aria-label="apple">
+            <button onclick="addToCart('Dfruit', 'dfruit', 500)">Add to Cart</button>
         </div>
-        </fieldset>
     </div>
     <!-- Vegetables Section -->
     <div class="section">
         <h2>Vegetables</h2>
         <div class="item">
-            <img src="tomatoesss.jpeg" alt="Tomato">
-            <span>Tomato - $2/kg</span>
-            <input type="number" id="tomato" placeholder="Kgs" min="0">
-            <button onclick="addToCart('Tomato', 'tomato', 2)">Add to Cart</button>
+            <img src="tomatoesss.jpeg" alt="Tomatos">
+            <span>Tomato - Rs.400/kg</span>
+            <input type="number" id="tomato" placeholder="Kgs" min="0" aria-label="apple">
+            <button onclick="addToCart('Tomato', 'tomato', 400)">Add to Cart</button>
         </div>
         <div class="item">
-            <img src="potatoes.jpeg" alt="Potato">
-            <span>Potato - $1/kg</span>
-            <input type="number" id="potato" placeholder="Kgs" min="0">
-            <button onclick="addToCart('Potato', 'potato', 1)">Add to Cart</button>
+            <img src="potatoes.jpeg" alt="Potatos">
+            <span>Potato - Rs.350/kg</span>
+            <input type="number" id="potato" placeholder="Kgs" min="0" aria-label="apple">
+            <button onclick="addToCart('Potato', 'potato', 350)">Add to Cart</button>
         </div>
         <div class="item">
-            <img src="carrot.jpeg" alt="Carrot">
-            <span>Carrot - $3/kg</span>
-            <input type="number" id="carrot" placeholder="Kgs" min="0">
-            <button onclick="addToCart('Carrot', 'carrot', 3)">Add to Cart</button>
+            <img src="carrot.jpeg" alt="Carrots">
+            <span>Carrot - Rs.525/kg</span>
+            <input type="number" id="carrot" placeholder="Kgs" min="0" aria-label="apple">
+            <button onclick="addToCart('Carrot', 'carrot', 525)">Add to Cart</button>
         </div>
         <div class="item">
-            <img src="brinjal.webp" alt="Cabbage">
-            <span>Cabbage - $4/kg</span>
-            <input type="number" id="cabbage" placeholder="Kgs" min="0">
-            <button onclick="addToCart('Cabbage', 'cabbage', 4)">Add to Cart</button>
+            <img src="brinjal.webp" alt="Brinjals">
+            <span>Brinjal - Rs.450/kg</span>
+            <input type="number" id="brinjal" placeholder="Kgs" min="0" aria-label="apple">
+            <button onclick="addToCart('Brinjal', 'brinjal', 450)">Add to Cart</button>
         </div>
         <div class="item">
-            <img src="beans.jpeg" alt="Onion">
-            <span>Onion - $5/kg</span>
-            <input type="number" id="onion" placeholder="Kgs" min="0">
-            <button onclick="addToCart('Onion', 'onion', 5)">Add to Cart</button>
+            <img src="beans.jpeg" alt="Beanss">
+            <span>Onion - $510/kg</span>
+            <input type="number" id="beans" placeholder="Kgs" min="0" aria-label="apple">
+            <button onclick="addToCart('Beans', 'beans', 510)">Add to Cart</button>
         </div>
         <div class="item">
-            <img src="pumpkin.jpeg" alt="Pumpkin">
-            <span>Pumpkin - $6/kg</span>
-            <input type="number" id="pumpkin" placeholder="Kgs" min="0">
-            <button onclick="addToCart('Pumpkin', 'pumpkin', 6)">Add to Cart</button>
+            <img src="pumpkin.jpeg" alt="Pumpkins">
+            <span>Pumpkin - $390/kg</span>
+            <input type="number" id="pumpkin" placeholder="Kgs" min="0" aria-label="apple">
+            <button onclick="addToCart('Pumpkin', 'pumpkin', 390)">Add to Cart</button>
         </div>
     </div>
 
@@ -156,40 +155,40 @@
     <div class="section">
         <h2>Dairy Produce</h2>
         <div class="item">
-            <img src="fresh milk.jpeg" alt="Milk">
-            <span>Milk - $1/litre</span>
-            <input type="number" id="milk" placeholder="Qty" min="0">
-            <button onclick="addToCart('Milk', 'milk', 1)">Add to Cart</button>
+            <img src="fresh.milk.jpeg" alt="Milk">
+            <span>Fresh-Milk - Rs.450</span>
+            <input type="number" id="milk" placeholder="Qty" min="0" aria-label="apple">
+            <button onclick="addToCart('Milk', 'milk', 450)">Add to Cart</button>
         </div>
         <div class="item">
-            <img src="yoghurt.png" alt="Cheese">
-            <span>Cheese - $2/200g</span>
-            <input type="number" id="cheese" placeholder="Qty" min="0">
-            <button onclick="addToCart('Cheese', 'cheese', 2)">Add to Cart</button>
+            <img src="yoghurt.png" alt="Yoghurts">
+            <span>Yoghurt - Rs.80</span>
+            <input type="number" id="yoghurt" placeholder="Qty" min="0" aria-label="apple">
+            <button onclick="addToCart('Yoghurt', 'yoghurt', 80)">Add to Cart</button>
         </div>
         <div class="item">
-            <img src="butter.avif" alt="Butter">
-            <span>Butter - $3/200g</span>
-            <input type="number" id="butter" placeholder="Qty" min="0">
-            <button onclick="addToCart('Butter', 'butter', 3)">Add to Cart</button>
+            <img src="butter.avif" alt="Butterr">
+            <span>Butter - Rs.450</span>
+            <input type="number" id="butter" placeholder="Qty" min="0" aria-label="apple">
+            <button onclick="addToCart('Butter', 'butter', 450)">Add to Cart</button>
         </div>
         <div class="item">
-            <img src="curd.jpeg" alt="Yogurt">
-            <span>Yogurt - $4/200g</span>
-            <input type="number" id="yogurt" placeholder="Qty" min="0">
-            <button onclick="addToCart('Yogurt', 'yogurt', 4)">Add to Cart</button>
+            <img src="curd.jpeg" alt="Curd img">
+            <span>Curd - Rs.350</span>
+            <input type="number" id="curd" placeholder="Qty" min="0" aria-label="apple">
+            <button onclick="addToCart('Curd', 'curd', 350)">Add to Cart</button>
         </div>
         <div class="item">
-            <img src="milk-powder.jpeg" alt="Cream">
-            <span>Cream - $5/200g</span>
-            <input type="number" id="cream" placeholder="Qty" min="0">
-            <button onclick="addToCart('Cream', 'cream', 5)">Add to Cart</button>
+            <img src="milk-powder.jpeg" alt="Powder">
+            <span>Milk powder - Rs.1020</span>
+            <input type="number" id="powder" placeholder="Qty" min="0" aria-label="apple">
+            <button onclick="addToCart('Powder', 'powder', 1020)">Add to Cart</button>
         </div>
         <div class="item">
-            <img src="milkmaid.jpg" alt="Eggs">
-            <span>Eggs - $6/dozen</span>
-            <input type="number" id="eggs" placeholder="Qty" min="0">
-            <button onclick="addToCart('Eggs', 'eggs', 6)">Add to Cart</button>
+            <img src="milkmaid.jpg" alt="milkmaid1">
+            <span>Milkmaid - Rs.480</span>
+            <input type="number" id="milkmaid" placeholder="Qty" min="0" aria-label="apple">
+            <button onclick="addToCart('Milkmaid', 'milkmaid', 480)">Add to Cart</button>
         </div>
     </div>
 
@@ -197,40 +196,40 @@
     <div class="section">
         <h2>Meat and Seafood</h2>
         <div class="item">
-            <img src="tilapia.jpg" alt="Chicken">
-            <span>Chicken - $5/kg</span>
-            <input type="number" id="chicken" placeholder="Kgs" min="0">
-            <button onclick="addToCart('Chicken', 'chicken', 5)">Add to Cart</button>
+            <img src="tilapia.jpg" alt="Fish">
+            <span>Tilapia - Rs.600/kg</span>
+            <input type="number" id="fish" placeholder="Kgs" min="0" aria-label="apple">
+            <button onclick="addToCart('Fish', 'fish', 600)">Add to Cart</button>
         </div>
         <div class="item">
-            <img src="prawnss.webp" alt="Beef">
-            <span>Beef - $6/kg</span>
-            <input type="number" id="beef" placeholder="Kgs" min="0">
-            <button onclick="addToCart('Beef', 'beef', 6)">Add to Cart</button>
+            <img src="prawnss.webp" alt="prawns1">
+            <span>Prawns - Rs.800/kg</span>
+            <input type="number" id="prawns" placeholder="Kgs" min="0" aria-label="apple">
+            <button onclick="addToCart('Prawns', 'prawns', 800)">Add to Cart</button>
         </div>
         <div class="item">
-            <img src="chicken.jpg" alt="Fish">
-            <span>Fish - $4/kg</span>
-            <input type="number" id="fish" placeholder="Kgs" min="0">
-            <button onclick="addToCart('Fish', 'fish', 4)">Add to Cart</button>
+            <img src="chicken.jpg" alt="chicken1">
+            <span>Fish - Rs.760/kg</span>
+            <input type="number" id="chicken" placeholder="Kgs" min="0" aria-label="apple">
+            <button onclick="addToCart('Chicken', 'chicken', 760)">Add to Cart</button>
         </div>
         <div class="item">
-            <img src="cuttlefish.jpeg" alt="Shrimp">
-            <span>Shrimp - $3/kg</span>
-            <input type="number" id="shrimp" placeholder="Kgs" min="0">
-            <button onclick="addToCart('Shrimp', 'shrimp', 3)">Add to Cart</button>
+            <img src="cuttlefish.jpeg" alt="Cuttle1">
+            <span>Cuttlefish - Rs.1300/kg</span>
+            <input type="number" id="cuttle" placeholder="Kgs" min="0" aria-label="apple">
+            <button onclick="addToCart('Cuttle', 'cuttle', 1300)">Add to Cart</button>
         </div>
         <div class="item">
-            <img src="tuna.webp" alt="Shrimp">
-            <span>Shrimp - $3/kg</span>
-            <input type="number" id="shrimp" placeholder="Kgs" min="0">
-            <button onclick="addToCart('Shrimp', 'shrimp', 3)">Add to Cart</button>
+            <img src="tuna.webp" alt="tuna1">
+            <span>Tuna - Rs.800/kg</span>
+            <input type="number" id="tuna" placeholder="Kgs" min="0" aria-label="apple">
+            <button onclick="addToCart('Tuna', 'tuna', 800)">Add to Cart</button>
         </div>
         <div class="item">
-            <img src="mutton.jpg" alt="Shrimp">
-            <span>Shrimp - $3/kg</span>
-            <input type="number" id="shrimp" placeholder="Kgs" min="0">
-            <button onclick="addToCart('Shrimp', 'shrimp', 3)">Add to Cart</button>
+            <img src="mutton.jpg" alt="mutton1">
+            <span>Mutton - Rs.980/kg</span>
+            <input type="number" id="Mutton" placeholder="Kgs" min="0" aria-label="apple">
+            <button onclick="addToCart('Mutton', 'mutton', 980)">Add to Cart</button>
         </div>
     </div>
 
@@ -238,40 +237,40 @@
     <div class="section">
         <h2>Baking and Cooking Ingredients</h2>
         <div class="item">
-            <img src="flourr.jpg" alt="Flour">
-            <span>Flour - $1/kg</span>
-            <input type="number" id="flour" placeholder="Qty" min="0">
-            <button onclick="addToCart('Flour', 'flour', 1)">Add to Cart</button>
+            <img src="flourr.jpg" alt="flour1">
+            <span>Flour - Rs.200/kg</span>
+            <input type="number" id="flour" placeholder="Qty" min="0" aria-label="apple">
+            <button onclick="addToCart('Flour', 'flour', 200)">Add to Cart</button>
         </div>
         <div class="item">
-            <img src="sugarr.jpg" alt="Sugar">
-            <span>Sugar - $2/kg</span>
-            <input type="number" id="sugar" placeholder="Qty" min="0">
-            <button onclick="addToCart('Sugar', 'sugar', 2)">Add to Cart</button>
+            <img src="sugarr.jpg" alt="sugar1">
+            <span>Sugar - Rs.340/kg</span>
+            <input type="number" id="sugar" placeholder="Qty" min="0" aria-label="apple">
+            <button onclick="addToCart('Sugar', 'sugar', 340)">Add to Cart</button>
         </div>
         <div class="item">
-            <img src="oil.jpg" alt="Salt">
-            <span>Salt - $3/kg</span>
-            <input type="number" id="salt" placeholder="Qty" min="0">
-            <button onclick="addToCart('Salt', 'salt', 3)">Add to Cart</button>
+            <img src="oil.jpg" alt="Oil">
+            <span>Coconut oil - Rs.490/l</span>
+            <input type="number" id="oil" placeholder="Qty" min="0" aria-label="apple">
+            <button onclick="addToCart('Oil', 'oil', 490)">Add to Cart</button>
         </div>
         <div class="item">
-            <img src="baking powder.jpg" alt="Baking Powder">
-            <span>Baking Powder - $4/200g</span>
-            <input type="number" id="baking_powder" placeholder="Qty" min="0">
-            <button onclick="addToCart('Baking Powder', 'baking_powder', 4)">Add to Cart</button>
+            <img src="ketchup.webp" alt="ketchup1">
+            <span>Ketchup - Rs.890</span>
+            <input type="number" id="ketchup" placeholder="Qty" min="0" aria-label="apple">
+            <button onclick="addToCart('Ketchup', 'ketchup', 890)">Add to Cart</button>
         </div>
         <div class="item">
-            <img src="salt.jpg" alt="Yeast">
-            <span>Yeast - $5/200g</span>
-            <input type="number" id="yeast" placeholder="Qty" min="0">
-            <button onclick="addToCart('Yeast', 'yeast', 5)">Add to Cart</button>
+            <img src="salt.jpg" alt="salt1">
+            <span>Salt - Rs.280</span>
+            <input type="number" id="salt" placeholder="Qty" min="0" aria-label="apple">
+            <button onclick="addToCart('Salt', 'salt', 280)">Add to Cart</button>
         </div>
         <div class="item">
-            <img src="rice.webp" alt="Olive Oil">
-            <span>Olive Oil - $6/litre</span>
-            <input type="number" id="olive_oil" placeholder="Qty" min="0">
-            <button onclick="addToCart('Olive Oil', 'olive_oil', 6)">Add to Cart</button>
+            <img src="rice.webp" alt="rice">
+            <span>White rice - Rs.350/Kg</span>
+            <input type="number" id="rice" placeholder="Kgs" min="0" aria-label="apple">
+            <button onclick="addToCart('Rice', 'rice', 350)">Add to Cart</button>
         </div>
     </div>
 </section>
@@ -280,6 +279,10 @@
 <!-- Cart Table -->
 
 <section id="cart">
+    <div>
+    <h2>Your Order</h2>
+    </div>
+    <div>
     <table id="cart-table">
         <thead>
             <tr>
@@ -294,10 +297,11 @@
         <tfoot>
             <tr>
                 <td colspan="2">Total</td>
-                <td id="total-price">$0</td>
+                <td id="total-price">Rs.0</td>
             </tr>
         </tfoot>
     </table>
+    </div>
    
 </section>
 
@@ -312,7 +316,7 @@
 </section>
 <!-- Payment button ends -->
 
-<!----------------footer--------------->
+<!---footer-->
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-section contact-us">
@@ -334,15 +338,20 @@
             <div class="footer-section find-us">
                 <h4>Find Us On</h4>
                 <div class="social-icons">
-                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://facebook.com" aria-label="Facebook" class="social-icon">
+                    <i class="fab fa-facebook-f" alt="Facebook"></i></a>
+                    <a href="https://x.com"  aria-label="Twitter" class="social-icon">
+                    <i class="fab fa-twitter" alt="Twitter"></i></a>
+                    <a href="https://www.instagram.com"  aria-label="instagram" class="social-icon">
+                    <i class="fab fa-instagram" alt="instagram"></i></a>
+                    <a href="./https://www.linkedin.com" aria-label="linkedin"  class="social-icon">
+                    <i class="fab fa-linkedin-in" alt="linkedin"></i></a>
+                </div>
                 </div>
         </div>
     </footer>
 
-    <!-----------------------footer ends------------------------------->
+    <!--footer ends-->
 
 
 <!-- Link to external JavaScript file -->
