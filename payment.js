@@ -25,5 +25,16 @@ function generateOrderSummary() {
     }
 }
 
-// Call the function when the page loads
-window.onload = generateOrderSummary;
+// Load cart data from localStorage when the page loads
+document.addEventListener("DOMContentLoaded", () => {
+    if (!sessionStorage.getItem('cartExists')) {
+        localStorage.removeItem('cart'); // Clear localStorage if the page is refreshed
+    }
+    generateOrderSummary();
+});
+
+// Clear cart data on page refresh
+window.addEventListener('beforeunload', () => {
+    sessionStorage.removeItem('cartExists');
+    localStorage.removeItem('cart');
+});
