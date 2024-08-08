@@ -187,41 +187,47 @@ ul li:hover ul.dropdown {
 
 /*-------------------------------nav bar ends-------------------------------------------------------------*/
 
-.id {
-  margin-top: 9rem;
-  
-}
+/* order summary table starts */
+/* Cart Table */
 
-.id2 {
+.order-summary h2{
+  margin-top: 160px;
   margin-left: 600px;
 }
 
 #cart-table {
-  width: 90%;
+  width: 60%;
   border-collapse: collapse;
-  margin-top: 20px;
-  margin-left: 70px;
-
-  background-color: beige;
+  margin-top: 80px;
+  margin-left: 290px;
 }
 
-#cart-table th,
-#cart-table td {
-  border: 1px solid #080707;
+#cart-table th, #cart-table td {
+  border: 1.3px solid #312f2f;
+  background: rgb(243, 236, 236);
   padding: 10px;
   text-align: center;
-  background-color: #ffffff;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif1;
 }
 
 #cart-table th {
-  background-color: #e4e0d0;
+  background-color: #151413;
+  font-size: 16px;
+  color: #ffffff;
 }
 
+#cart-table td {
+  font-size: 17px;
+
+  
+}
+/* order summary table ends */
 @media (max-width: 768px) {
   #cart-table {
     width: 90%;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 90px;
   }
 }
 

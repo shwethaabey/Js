@@ -1,6 +1,16 @@
-// Initialize cart and favorites arrays
+//order page.js
+
+// Cart and Favorites Arrays
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+
+// Check if the cart was initialized during this session
+if (!sessionStorage.getItem('cartInitialized')) {
+    // Clear the cart in localStorage when the page is first loaded in a new session
+    localStorage.removeItem('cart');
+    cart = [];
+    sessionStorage.setItem('cartInitialized', 'true');
+}
 
 // Function to add items to the cart
 function addToCart(itemName, itemId, itemPrice) {
@@ -13,12 +23,11 @@ function addToCart(itemName, itemId, itemPrice) {
         if (cartItem) {
             cartItem.quantity += quantity;
         } else {
-            cart.push({ name: itemName, quantity, price: itemPrice });
+            cart.push({ name: itemName, quantity, price: itemPrice, total: itemPrice * quantity });
         }
 
         updateCartTable();
-        quantityInput.value = ''; 
-        localStorage.setItem('cart', JSON.stringify(cart)); // Save cart to localStorage
+        quantityInput.value = ''; // Clear input after adding
     } else {
         alert("Please enter a valid quantity.");
     }
@@ -36,78 +45,71 @@ function updateCartTable() {
         row.innerHTML = `
             <td>${item.name}</td>
             <td>${item.quantity}</td>
-            <td>Rs. ${(item.price * item.quantity).toFixed(2)}</td>
+            <td>Rs ${(item.price * item.quantity).toFixed(2)}</td>
+            <td><button class="remove-btn" onclick="removeFromCart('${item.name}')">Delete</button></td>
         `;
         cartTableBody.appendChild(row);
         totalPrice += item.price * item.quantity;
     });
 
-    document.getElementById("total-price").innerText = `Rs. ${totalPrice.toFixed(2)}`;
+    document.getElementById("total-price").innerText = `Rs ${totalPrice.toFixed(2)}`;
+
+    // Save the updated cart to localStorage
+    localStorage.setItem('cart', JSON.stringify(cart));
+}
+
+// Function to save the current cart as favorites
+function saveToFavorites() {
+    favorites = [...cart];
+    localStorage.setItem('favorites', JSON.stringify(favorites));
+    alert("Items saved to favorites!");
 }
 
 // Function to save the current cart as favorites
 function saveToFavorites() {
     if (cart.length === 0) {
-        alert("Sorry, Your cart is empty!");
+        alert("Your cart is empty. Add items before saving to favorites.");
     } else {
-        favorites = [...cart]; // Overwrite existing favorites
+        favorites = [...cart];
         localStorage.setItem('favorites', JSON.stringify(favorites));
         alert("Items saved to favorites!");
+        console.log("Favorites saved, no redirection should happen.");
     }
 }
+
 
 // Function to apply favorites to the cart and table
 function applyFavorites() {
     const storedFavorites = JSON.parse(localStorage.getItem('favorites'));
-
-    if (storedFavorites && storedFavorites.length > 0) {
+    
+    if (storedFavorites) {
         cart = storedFavorites;
         updateCartTable();
-        localStorage.setItem('cart', JSON.stringify(cart)); // Save updated cart to localStorage
-        alert("Your favourites have been added to the cart!");
+        alert("Favorites applied to the cart!");
     } else {
-        alert("Sorry, your favourites list is empty!");
+        alert("No favorites found!");
     }
 }
 
-// Function to proceed to payment page
+// Function to proceed to payment
 function proceedToPayment() {
-    localStorage.setItem('cart', JSON.stringify(cart)); // Store the cart in localStorage
-    window.location.href = './payment.html'; // Redirect to the payment page
-}
-
-// Function to validate and proceed to payment
-function validateAndProceedToPayment(event) {
-    event.preventDefault(); // Prevent the form from submitting
-
-    const formFields = document.querySelectorAll("#checkoutForm input[type='text'], #checkoutForm input[type='email'], #checkoutForm input[type='number']");
-    let allFieldsFilled = true;
-
-    // Check if all fields are filled
-    formFields.forEach(field => {
-        if (field.value.trim() === '') {
-            allFieldsFilled = false;
-            field.style.border = "2px solid black"; // Highlight the empty fields
-        } else {
-            field.style.border = ""; // Reset the border if filled
-        }
-    });
-
-    // Show alert if fields are missing or cart is empty
-    if (!allFieldsFilled) {
-        alert("Please fill in all the fields before proceeding to checkout.");
-    } else {
-        // Calculate delivery date (2 days after current date)
-        const currentDate = new Date();
-        const deliveryDate = new Date(currentDate.getTime() + 2 * 24 * 60 * 60 * 1000);
-        const formattedDeliveryDate = deliveryDate.toLocaleDateString();
-        alert(`Thank you for the purchase! Your order will be delivered on ${formattedDeliveryDate}`); // Optional: For testing
-        window.location.href = './payment.html';
+    if (cart.length === 0) {
+        alert("Your cart is empty. Please add items before proceeding to payment.");
+        return;
     }
+    // Save the cart to localStorage before proceeding
+    localStorage.setItem('cart', JSON.stringify(cart));
+    window.location.href = './payment.html';
 }
 
-// Adding event listener to the form's submit button
-document.querySelector("#checkoutForm").addEventListener("submit", validateAndProceedToPayment);
+// Adding event listener to the payment button
+document.querySelector(".btn").addEventListener("click", proceedToPayment);
 
-// Load cart data from localStorage when the page loads
+// Load cart data and update table when the page loads
 document.addEventListener("DOMContentLoaded", updateCartTable);
+
+// Function to remove an item from the cart
+function removeFromCart(itemName) {
+    cart = cart.filter(item => item.name !== itemName);
+    updateCartTable();
+}

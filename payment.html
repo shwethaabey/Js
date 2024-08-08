@@ -60,34 +60,29 @@
     <!--end nav bar-->
 
 <body>
-    <section class="id" id="cart">
-        <div class="id2">
-        <h2>Confirm Order</h2>
-        </div>
-        <div>
-        <table class="cart-table" id="cart-table">
-            <thead>
-                <tr>
-                    <th>Item</th>
-                    <th>Quantity</th>
-                    <th>Price</th>
-                </tr>
-            </thead>
-            <tbody>
-    
-            </tbody>
-            <tfoot>
-                <tr>
-                    <td colspan="2">Total</td>
-                    <td id="total-price">Rs.0</td>
-                </tr>
-            </tfoot>
+    <!---order summmary starts-->
+<section class="order-summary">
+    <h2>Order Summary</h2>
+    <table id="cart-table">
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>Quantity</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Cart items will be populated here by JavaScript -->
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="2">Total</td>
+                <td id="total-price"> Rs 0</td>
+            </tr>
+        </tfoot>
         </table>
-        </div>
-       
-    </section>
-
-
+</section>
+<!---order summary ends-->
 
 <section>
     <div class="container">
@@ -202,7 +197,6 @@
 
 <!-----------------------footer ends------------------------------->
 
-<script src="order.js"></script>
 <script src="payment.js"></script>
 
 </body>
