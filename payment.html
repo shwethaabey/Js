@@ -16,7 +16,7 @@
 
 </head>
 
-
+<body>
     <!--navbar-->
     <nav>
 
@@ -59,7 +59,7 @@
 
     <!--end nav bar-->
 
-<body>
+
     <!---order summmary starts-->
 <section class="order-summary">
     <h2>Order Summary</h2>
@@ -125,11 +125,12 @@
                     <div class="inputBox">
                     <p>
                         <label for="cards">Cards Accepted: </label>
-                        <select id="cards" name="cards" placeholder="Type of card" >
+                        <select id="card" name="card" required>
+                            <option value="" disabled selected>Select your card type</option>
                             <option value="visa">Visa</option>
-                            <option value="master">Master Card</option>
-                            <option value="american">American Express</option>
-                              
+                            <option value="mastercard">MasterCard</option>
+                            <option value="AMxpress">American Express</option>
+
                         </select>
                     </p>
                     </div>
