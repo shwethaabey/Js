@@ -154,6 +154,10 @@ ul li:hover ul.dropdown {
   }
 }
 
+/*navbar ends--*/
+
+/*title bar*---------*/
+
 .title {
   background-color: rgb(249, 242, 231);
   color: rgb(9, 9, 8);
@@ -174,6 +178,10 @@ ul li:hover ul.dropdown {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+
+
+/*--product section starts*/
+
 section {
   padding: 20px;
   margin: 20px 0;
@@ -181,9 +189,6 @@ section {
     margin-bottom: 10px;
 
 }
-
-
-
 .section {
   margin-bottom: 10px;
   display: inline-block;
@@ -225,6 +230,8 @@ section {
   border-radius: 5px;
 }
 
+/*---add to cart button*/
+
 .item button {
   background-color: #020202;
   color: white;
@@ -256,7 +263,7 @@ section {
   background-color: #f2f2f2;
 }
 
-/* Styles for the remove button */
+/* ---- remove button---- */
 .remove-btn {
   background-color:rgb(243, 236, 236) ;
   color: rgb(21, 13, 13);
@@ -271,15 +278,13 @@ section {
   background-color: #ff1c1c;
 }
 
-/* CSS file or style tag */
-
+/*----payment button*/
 .paymentbutton{
   margin-bottom: 50px;
 }
 
-
+/*--add to fav*/
 #addToFavoritesBtn {
-  /* Styles for the "Add to Favourites" button */
   background-color: rgba(144, 149, 152, 0.997);
   color: white;
   padding: 17px 50px;
@@ -290,6 +295,8 @@ section {
   text-decoration: none;
   margin-right: 40px;
 }
+
+/*--apply to fav*/
 
 #applyFavoritesBtn {
   background-color: rgba(144, 149, 152, 0.997);
@@ -304,8 +311,9 @@ section {
   
 }
 
+/*--buy now button*/
+
 #buyNowBtn {
-  /* Styles for the "Buy now" button */
   background-color: rgb(4, 4, 4);
   color: white;
   padding: 17px 60px;
@@ -316,11 +324,7 @@ section {
   text-decoration: none;
   margin-right: 40px;
 }
-
-.link3 {
-  text-decoration: none;
-  color: #ffff;
-}
+/*--foooter section*/
 
 .footer {
   background-color: rgb(243, 236, 236);
