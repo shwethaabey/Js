@@ -1,39 +1,36 @@
-//order page.js
 
 // Cart and Favorites Arrays
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
 
+
 // Check if the cart was initialized during this session
 if (!sessionStorage.getItem('cartInitialized')) {
-    // Clear the cart in localStorage when the page is first loaded in a new session
+    // Clear  cart in localStorage 
     localStorage.removeItem('cart');
     cart = [];
     sessionStorage.setItem('cartInitialized', 'true');
 }
 
-// Function to add items to the cart
+
 function addToCart(itemName, itemId, itemPrice) {
     const quantityInput = document.getElementById(itemId);
     const quantity = parseFloat(quantityInput.value);
-
-    if (quantity > 0) {
-        const cartItem = cart.find(item => item.name === itemName);
-        
-        if (cartItem) {
-            cartItem.quantity += quantity;
-        } else {
-            cart.push({ name: itemName, quantity, price: itemPrice, total: itemPrice * quantity });
-        }
-
-        updateCartTable();
-        quantityInput.value = ''; // Clear input after adding
+  
+  
+    const cartItem = cart.find(item => item.name === itemName);
+    
+    if (cartItem) {
+        cartItem.quantity += quantity;
     } else {
-        alert("Please enter a valid quantity.");
+        cart.push({ name: itemName, quantity, price: itemPrice, total: itemPrice * quantity });
     }
-}
-
-// Function to update cart table and total price
+  
+    updateCartTable();
+    quantityInput.value = ''; // Clear data after adding
+  }
+  
+// Function to update cart table and total price of items
 function updateCartTable() {
     const cartTableBody = document.querySelector("#cart-table tbody");
     cartTableBody.innerHTML = ''; 
@@ -46,15 +43,15 @@ function updateCartTable() {
             <td>${item.name}</td>
             <td>${item.quantity}</td>
             <td>Rs ${(item.price * item.quantity).toFixed(2)}</td>
-            <td><button class="remove-btn" onclick="removeFromCart('${item.name}')">Delete</button></td>
-        `;
+            <td><button class="remove-btn" onclick="removeFromCart('${item.name}')">Delete</button></td>`;
+
         cartTableBody.appendChild(row);
         totalPrice += item.price * item.quantity;
     });
 
     document.getElementById("total-price").innerText = `Rs ${totalPrice.toFixed(2)}`;
 
-    // Save the updated cart to localStorage
+    // Save the new cart to localStorage
     localStorage.setItem('cart', JSON.stringify(cart));
 }
 
@@ -62,7 +59,7 @@ function updateCartTable() {
 function saveToFavorites() {
     favorites = [...cart];
     localStorage.setItem('favorites', JSON.stringify(favorites));
-    alert("Items saved to favorites!");
+    alert("Items saved to your favorites!");
 }
 
 // Function to save the current cart as favorites
@@ -72,7 +69,7 @@ function saveToFavorites() {
     } else {
         favorites = [...cart];
         localStorage.setItem('favorites', JSON.stringify(favorites));
-        alert("Items saved to favorites!");
+        alert("Current items saved to favorites!");
         console.log("Favorites saved, no redirection should happen.");
     }
 }
@@ -85,12 +82,11 @@ function applyFavorites() {
     if (storedFavorites) {
         cart = storedFavorites;
         updateCartTable();
-        alert("Favorites applied to the cart!");
+        alert("Your favorites applied to the cart!");
     } else {
         alert("No favorites found!");
     }
 }
-
 // Function to proceed to payment
 function proceedToPayment() {
     if (cart.length === 0) {

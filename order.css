@@ -242,6 +242,7 @@ section {
   width: 100%;
   border-collapse: collapse;
   margin-top: 12px;
+  margin-bottom: -60px;
 }
 
 #cart-table th,
@@ -257,8 +258,8 @@ section {
 
 /* Styles for the remove button */
 .remove-btn {
-  background-color:rgb(231, 198, 152);
-  color: white;
+  background-color:rgb(243, 236, 236) ;
+  color: rgb(21, 13, 13);
   border: none;
   padding: 5px 10px;
   cursor: pointer;
@@ -270,20 +271,50 @@ section {
   background-color: #ff1c1c;
 }
 
-.paymentbutton .btn {
-  display: inline-block;
-  background-color: #040604;
+/* CSS file or style tag */
+
+.paymentbutton{
+  margin-bottom: 50px;
+}
+
+
+#addToFavoritesBtn {
+  /* Styles for the "Add to Favourites" button */
+  background-color: rgba(144, 149, 152, 0.997);
   color: white;
-  padding: 12px 24px;
-  font-size: 18px;
-  text-decoration: none;
-  border-radius: 5px;
-  transition:transform 0.3s, box-shadow 0.9s;
-  max-width: 400px;
-  text-align: center;
+  padding: 17px 50px;
+  border: none;
   cursor: pointer;
-  margin-left: 30px;
-  font-family: 'Times New Roman', Times, serif;
+  border-radius: 10px;
+  font-size: 20px;
+  text-decoration: none;
+  margin-right: 40px;
+}
+
+#applyFavoritesBtn {
+  background-color: rgba(144, 149, 152, 0.997);
+  color: white;
+  padding: 17px 50px;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  font-size: 20px;
+  text-decoration: none;
+  margin-right: 40px;
+  
+}
+
+#buyNowBtn {
+  /* Styles for the "Buy now" button */
+  background-color: rgb(4, 4, 4);
+  color: white;
+  padding: 17px 60px;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  font-size: 20px;
+  text-decoration: none;
+  margin-right: 40px;
 }
 
 .link3 {
