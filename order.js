@@ -12,8 +12,8 @@ if (!sessionStorage.getItem('cartInitialized')) {
     sessionStorage.setItem('cartInitialized', 'true');
 }
 
-//adding items to the cart
-// Add items to cart
+
+// Adding items to cart
 function addToCart(itemName, itemId, itemPrice) {
     const quantityInput = document.getElementById(itemId);
     const quantity = parseFloat(quantityInput.value);
@@ -33,6 +33,8 @@ function addToCart(itemName, itemId, itemPrice) {
         alert("Please enter a valid quantity.");
     }
 }
+
+
 // Function to update cart table and total price of items
 function updateCartTable() {
     const cartTableBody = document.querySelector("#cart-table tbody");

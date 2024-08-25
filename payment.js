@@ -24,12 +24,6 @@ function updateCartTable() {
 
     document.getElementById("total-price").innerText = `Rs ${totalPrice.toFixed(2)}`;
 
-
-    // Disable the form if the cart is empty
-    document.querySelector("#checkoutForm").disabled = cart.length === 0;
-
-    // Set a flag to indicate if cart is empty
-    window.cartIsEmpty = cart.length === 0;
 }
 
 
@@ -72,7 +66,4 @@ function validateAndProceedToPayment(event) {
 
 // Adding event listener to the form's submit button
 document.querySelector("#checkoutForm").addEventListener("submit", validateAndProceedToPayment);
-
-// Load cart data from localStorage when the page loads
-document.addEventListener("DOMContentLoaded", updateCartTable);
 
