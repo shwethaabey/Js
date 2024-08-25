@@ -59,10 +59,14 @@ function validateAndProceedToPayment(event) {
     } else if (window.cartIsEmpty) { // Check if cart is empty
         alert("Your cart is empty. Please add items to your cart.");
     } else {
-        // Calculate delivery date (2 days after current date)
-        
-        alert(`Thank you for the purchase! Your order will be delivered on ${formattedDeliveryDate}`); 
-        window.location.href = './payment.html';
+        // Display thank you message and delivery date in 2 days
+        const today = new Date();
+        const deliveryDate = new Date(today);
+        deliveryDate.setDate(today.getDate() + 2);
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        const formattedDate = deliveryDate.toLocaleDateString(undefined, options);
+
+        alert(`Thank you for your purchase! Your order will be delivered by ${formattedDate}.`);
     }
 }
 
@@ -71,3 +75,4 @@ document.querySelector("#checkoutForm").addEventListener("submit", validateAndPr
 
 // Load cart data from localStorage when the page loads
 document.addEventListener("DOMContentLoaded", updateCartTable);
+

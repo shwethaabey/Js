@@ -12,24 +12,27 @@ if (!sessionStorage.getItem('cartInitialized')) {
     sessionStorage.setItem('cartInitialized', 'true');
 }
 
-
+//adding items to the cart
+// Add items to cart
 function addToCart(itemName, itemId, itemPrice) {
     const quantityInput = document.getElementById(itemId);
     const quantity = parseFloat(quantityInput.value);
-  
-  
-    const cartItem = cart.find(item => item.name === itemName);
-    
-    if (cartItem) {
-        cartItem.quantity += quantity;
+
+    if (quantity > 0) {
+        const cartItem = cart.find(item => item.name === itemName);
+        
+        if (cartItem) {
+            cartItem.quantity += quantity;
+        } else {
+            cart.push({ name: itemName, quantity, price: itemPrice, total: itemPrice * quantity });
+        }
+
+        updateCartTable();
+        quantityInput.value = '';
     } else {
-        cart.push({ name: itemName, quantity, price: itemPrice, total: itemPrice * quantity });
+        alert("Please enter a valid quantity.");
     }
-  
-    updateCartTable();
-    quantityInput.value = ''; // Clear data after adding
-  }
-  
+}
 // Function to update cart table and total price of items
 function updateCartTable() {
     const cartTableBody = document.querySelector("#cart-table tbody");
@@ -87,6 +90,7 @@ function applyFavorites() {
         alert("No favorites found!");
     }
 }
+
 // Function to proceed to payment
 function proceedToPayment() {
     if (cart.length === 0) {
@@ -109,3 +113,4 @@ function removeFromCart(itemName) {
     cart = cart.filter(item => item.name !== itemName);
     updateCartTable();
 }
+
